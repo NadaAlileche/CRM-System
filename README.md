@@ -87,4 +87,5 @@ CRM-Workspace/
 - Bei Einsatz im Live-Betrieb: SMTP-Login-Daten 'mail_config.php' absichern und HTTPS verwenden.
 
 ---
+
 © 2025 – Kundenverwaltungs-Website | Entwickelt mit VS Code
