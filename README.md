@@ -1,15 +1,19 @@
-# CRM-System
-Kundenverwaltungs-Website (CRM-Workspace)
-Dies ist eine webbasierte Anwendung zur Verwaltung und Registrierung von Kunden, entwickelt mit PHP, HTML, CSS, JavaScript und MySQL. Sie dient als Grundlage für ein einfaches CRM-System und wurde lokal mit XAMPP und phpMyAdmin umgesetzt. Der E-Mail-Versand wird über Papercut SMTP realisiert.
+# Kundenverwaltungs-Website (CRM-Workspace)
 
-Funktionen
-Registrierung neuer Kunden mit E-Mail-Bestätigung
-Login-System für Kunden und Administratoren
-Trennung von Admin- und Kunden-Dashboard
-Passwort-Zurücksetzen via E-Mail
-Kunden können ihre Daten selbst aktualisieren und via E-Mail bestätigen
-Administratoren können Benutzerkonten verwalten und löschen
-Projektstruktur
+Dies ist eine webbasierte Anwendung zur **Verwaltung und Registrierung von Kunden**, entwickelt mit PHP, HTML, CSS, JavaScript und MySQL. Sie dient als Grundlage für ein einfaches CRM-System und wurde lokal mit **XAMPP** und **phpMyAdmin** umgesetzt. Der E-Mail-Versand wird über **Papercut SMTP** realisiert.
+
+##  Funktionen
+
+- Registrierung neuer Kunden mit E-Mail-Bestätigung
+- Login-System für Kunden und Administratoren
+- Trennung von Admin- und Kunden-Dashboard
+- Passwort-Zurücksetzen via E-Mail
+- Kunden können ihre Daten selbst aktualisieren und via E-Mail bestätigen
+- Administratoren können Benutzerkonten verwalten und löschen
+
+##  Projektstruktur
+
+```
 CRM-Workspace/
 ├── mails/                        # E.Mail Templates je nach Anwendungsfall
 ├── js/script.js                  # Funktionen zum Steuern des Formularverhaltens in Abhängigkeit des in der Session befindlichen Anwenders (kunde/admin)
@@ -39,30 +43,48 @@ CRM-Workspace/
 └── kunden.sql/                   # Zu importierende Tabelle 'kunden' in Datenbank 'kundenverwaltung' ink. eines Admins. Anmeldedaten befinden sich in der "add_admin.php"
 
  
-Installation und Einrichtung
-Voraussetzungen müssen nur installiert werden falls der PapercutService und Composer-->vendor/ & composer.json & composer.lock aus dem Stammverzeichnis CRM-Workspace nicht verwendet werden!
-XAMPP mit Apache & MySQL
-Composer
-Papercut SMTP für E-Mail-Tests
-Ein Editor wie VS Code (optional, empfohlen)
-Setup
-Projekt entpacken und in das XAMPP-Verzeichnis verschieben, z. B.:
+```
 
-C:\xampp\htdocs\CRM-Workspace
-Datenbank einrichten über http://localhost/phpmyadmin
-Erstelle eine neue Datenbank kunden und importiere das im Repository enthaltene SQL-Schema "kunden.sql"
+##  Installation und Einrichtung
 
-Abhängigkeiten installieren:
+### Voraussetzungen müssen nur installiert werden falls der PapercutService und Composer-->vendor/ & composer.json & composer.lock aus dem Stammverzeichnis CRM-Workspace nicht verwendet werden!
 
-cd CRM-Workspace
-composer install
-Papercut SMTP starten (aus dem Ordner PapercutService)
-Öffne Papercut.exe → es läuft auf localhost:25 (kein Versand nach außen).
+- [XAMPP](https://www.apachefriends.org/index.html) mit Apache & MySQL
+- [Composer](https://getcomposer.org/)
+- [Papercut SMTP](https://github.com/ChangemakerStudios/Papercut-SMTP) für E-Mail-Tests
+- Ein Editor wie VS Code (optional, empfohlen) 
 
-Projekt im Browser starten:
+### Setup
 
-http://localhost/CRM-Workspace/startseite.html
-Sicherheit & Hinweise
-Der E-Mail-Versand ist aktuell nur für lokale Tests gedacht.
-Bei Einsatz im Live-Betrieb: SMTP-Login-Daten 'mail_config.php' absichern und HTTPS verwenden.
+1. **Projekt entpacken und in das XAMPP-Verzeichnis verschieben**, z. B.:
+
+   ```bash
+   C:\xampp\htdocs\CRM-Workspace
+   ```
+
+2. **Datenbank einrichten** über [http://localhost/phpmyadmin](http://localhost/phpmyadmin)  
+   Erstelle eine neue Datenbank `kunden` und importiere das im Repository enthaltene SQL-Schema "kunden.sql"
+
+3. **Abhängigkeiten installieren**:
+
+   ```bash
+   cd CRM-Workspace
+   composer install
+   ```
+
+4. **Papercut SMTP starten** (aus dem Ordner `PapercutService`)  
+   Öffne `Papercut.exe` → es läuft auf `localhost:25` (kein Versand nach außen).
+
+5. **Projekt im Browser starten**:
+
+   ```
+   http://localhost/CRM-Workspace/startseite.html
+   ```
+
+##  Sicherheit & Hinweise
+
+- Der E-Mail-Versand ist aktuell nur für lokale Tests gedacht.
+- Bei Einsatz im Live-Betrieb: SMTP-Login-Daten 'mail_config.php' absichern und HTTPS verwenden.
+
+---
 © 2025 – Kundenverwaltungs-Website | Entwickelt mit VS Code
